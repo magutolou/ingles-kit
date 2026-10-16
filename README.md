@@ -102,11 +102,16 @@ Detalhes em [`plugins/ingles/referencia/ferramentas.md`](plugins/ingles/referenc
 
 ## Atualizar
 
-Pra puxar a versão mais nova do kit:
+Pra puxar a versão mais nova do kit, no terminal (PowerShell ou bash), **fora** do Claude Code:
 
+```bash
+claude plugin marketplace update ingles-kit
+claude plugin update ingles@ingles-kit
 ```
-/plugin marketplace update ingles-kit
-```
+
+São os dois: o primeiro baixa o kit novo, o segundo troca o plugin instalado. Só o primeiro não muda
+nada. Depois **feche e abra o Claude Code**. Pra conferir, `claude plugin list` mostra a versão
+instalada, que é o começo do último commit deste repo.
 
 Seus dados não são tocados: eles estão no seu repo, não no plugin.
 
