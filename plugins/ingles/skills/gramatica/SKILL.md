@@ -57,6 +57,43 @@ Pra cada passo:
 Nível A1-A2: explicação em PT, exemplos em inglês. B1+: em inglês, com PT só onde o contraste com o
 português for o ponto.
 
+Como explicar:
+
+- **Lógica antes de lista.** Quando a regra sai de um princípio, mostrar o princípio e derivar os
+  casos dele (`at` marca um ponto no tempo, então *at 5 p.m.*, *at the moment* e *at Christmas*, o
+  feriado visto como um ponto no calendário). Teste antes de mandar: com o princípio, o aluno acertaria
+  um caso que não viu? Quando não há lógica, dizer que é uso, agrupar o que for parecido e dar um
+  gancho de memória. "É preciso decorar" nunca é a explicação.
+- **Aula, não resumo do livro.** O livro dá a ordem, os termos e o conteúdo; a explicação é do agente.
+  Reagrupar os itens da seção pela lógica, começar pelo contraste com o português, cortar o que não
+  pega pra esse aluno. Listar os itens da seção na ordem do livro, um exemplo cada, é resumo, não aula.
+- **Tabela quando formas competem.** Duas ou três formas que se opõem (`at`/`on`/`in`, `at night` ×
+  `in the night`, `for` × `since`) vão numa tabela. Exemplos em lista simples, sem sublista pra cada
+  regra.
+
+O modelo abaixo mostra a **forma** de um passo (A1-A2, em PT), não o tamanho nem o tópico:
+
+````markdown
+### Passo 1 (parte A): `for` × `since`
+
+Em português as duas viram "há" ou "desde", mas olham pro tempo de jeitos diferentes:
+
+| | olha pra | exemplo |
+|---|---|---|
+| **for** | o **tamanho** do período | I've lived here **for** ten years. |
+| **since** | o **ponto** onde começou | I've lived here **since** 2016. |
+
+O teste: se a pergunta é "quanto tempo?", é `for`; se é "desde quando?", é `since`. Com ele você acerta
+casos que nunca viu: *for a while*, *since Monday*, *since I was a kid*.
+
+**Armadilha do português:** "moro aqui há dez anos" puxa o presente.
+- ✗ *I live here for ten years.* → ✓ *I've lived here for ten years.*
+
+**Checagem**
+1. She's worked at the bank ___ March.
+2. We've been waiting ___ forty minutes.
+````
+
 ---
 
 ## Fase 3: Lote final
