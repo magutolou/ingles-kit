@@ -41,6 +41,51 @@ pede tudo.
 
 No modo vocab, fechar com `Next word?`.
 
+**O formato faz parte do verbete.** Título com `##`, uma seção por bloco com rótulo em negrito ou
+`###`, sentidos numerados com os exemplos em lista embaixo, comparação **sempre em tabela**, erros em
+lista `✗ → ✓`. Nunca parágrafo corrido: o aluno bate o olho e acha a seção que quer. O modelo abaixo
+mostra a **forma**, não o tamanho; seção que não agrega continua saindo. A1-A2: mesmos blocos, com os
+rótulos e as explicações em PT (`Pronúncia`, `Significados`, `Erros comuns`, `Em português`) e os
+exemplos em inglês.
+
+````markdown
+## stingy
+
+**Pronunciation:** UK /ˈstɪn.dʒi/ · US /ˈstɪn.dʒi/
+> Tip: the `g` is soft (/dʒ/, like "dj"), not the `g` of "go".
+
+**Part of speech:** adjective · informal, critical
+
+### Meanings
+1. **Unwilling to spend or give money**, even when you can afford it.
+   - My uncle is too **stingy** to pay for a taxi.
+   - Don't be so **stingy**, it's only five dollars.
+2. **(of an amount) Small, not generous.**
+   - The portions at that place are pretty **stingy**.
+
+### Structure
+- `be stingy with` + noun: *She's stingy with compliments.*
+
+### Collocations / related forms
+- **stinginess** (noun) · **stingily** (adverb)
+- Nothing to do with **sting** (picar, ferroar), despite the spelling.
+
+### Comparison
+| Word | Nuance |
+|---|---|
+| **stingy** | informal, critical: hates spending |
+| **cheap** (US) | same idea, very common in speech; also "low quality" |
+| **mean** (UK) | British for stingy; in the US, *mean* = unkind |
+| **frugal** | positive: careful with money |
+
+### Common mistakes for Portuguese speakers
+- ✗ *He's very economic.* → ✓ *He's very economical* (neutral) / *stingy* (critical). *Economic* = da economia.
+- ✗ /ˈstɪŋ.gi/, with a hard `g` → ✓ /ˈstɪn.dʒi/
+
+### Portuguese equivalents
+**pão-duro**, **mão de vaca**, **sovina**; for amounts, **mixuruca**
+````
+
 - **Frase de contexto manda.** Se ele mandou a frase onde achou a palavra, o verbete explica **a frase**
   antes da palavra solta: o sentido dela, a quebra em partes, a paráfrase. Muitas vezes ele conhece
   todas as palavras e o que travou foi o idioma (`can't help but`).
@@ -58,7 +103,9 @@ Toda expressão que recebeu verbete entra **na hora** em `<pasta>/ingles-vocab-p
 `| expressão (forma de dicionário) | frase de contexto dele, literal (se mandou) | data | origem |`
 
 Origem: `vocab`, `monólogo`, `chat`. Escrever na hora, e não só no fim, porque a conversa pode ser
-limpa antes do `/ingles:fecha`, e o registro é o que sobrevive. Antes de escrever, conferir se a expressão
+limpa antes do `/ingles:fecha`, e o registro é o que sobrevive. **Gravar antes de escrever o verbete**, em
+silêncio, pra que o verbete seja a resposta final e não fique enterrado entre chamadas de ferramenta
+seguido de um "registrado". Antes de escrever, conferir se a expressão
 já está em `ingles-vocab-pendentes.md` ou no `ingles-vocabulario.csv` (aí avisar que ele já tem card daquela palavra).
 
 ---
