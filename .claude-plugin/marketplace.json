@@ -1,0 +1,15 @@
+{
+  "name": "ingles-kit",
+  "description": "Professor de inglês com memória pro Claude Code",
+  "owner": {
+    "name": "Maguto",
+    "url": "https://github.com/magutolou"
+  },
+  "plugins": [
+    {
+      "name": "ingles",
+      "source": "./plugins/ingles",
+      "description": "Monólogo corrigido, gramática guiada pelos seus erros e vocabulário, com memória em arquivos no seu repo"
+    }
+  ]
+}
