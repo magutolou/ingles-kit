@@ -11,15 +11,17 @@ pra decidir o que você estuda em seguida. Feito pra quem fala português.
 
 ## Instalar
 
-Dentro do Claude Code:
+Você não roda nada: quem instala é o seu Claude Code (o app do Claude, aba **Code**, ou o `claude`
+no terminal). Abra uma sessão **na pasta onde você quer guardar seu inglês** (seu segundo cérebro, um
+repo qualquer ou uma pasta nova) e mande:
 
 ```
-/plugin marketplace add magutolou/ingles-kit
-/plugin install ingles@ingles-kit
+Instala o plugin ingles-kit seguindo a seção "Para o agente" do README de
+https://github.com/magutolou/ingles-kit
 ```
 
-Depois, **abra o Claude Code na pasta onde você quer guardar seu inglês** (seu segundo cérebro, um repo
-qualquer ou uma pasta nova) e rode:
+Quando ele terminar, abra uma **sessão nova** na mesma pasta (o plugin só carrega quando a sessão
+começa) e rode:
 
 ```
 /ingles:setup
@@ -29,13 +31,29 @@ O agente olha a pasta, propõe onde guardar os dados e encaixa o inglês no que 
 sobrescrever nada. Depois ele pergunta uma coisa por vez, pede um teste de nível (EF SET, grátis) e
 uma amostra sua falando, e monta o plano. São uns 20 minutos, sem contar o teste.
 
-Se a instalação reclamar de SSH, rode isto no terminal antes de abrir o Claude Code e tente de novo:
+Tem um segundo cérebro? Monte ele antes e instale o kit numa sessão na pasta dele: o setup guarda o
+inglês junto e encaixa o fechamento no `/flush` que você já tem.
 
-```bash
-export CLAUDE_CODE_PLUGIN_PREFER_HTTPS=1
-```
+### Para o agente: instalar
 
-(No PowerShell: `$env:CLAUDE_CODE_PLUGIN_PREFER_HTTPS = "1"`.)
+1. **Achar o executável do Claude Code.** No terminal é `claude`. No app do Claude ele não está no
+   PATH; use o executável da própria sessão:
+   - **bash:** `"$CLAUDE_CODE_EXECPATH"`
+   - **PowerShell** (a variável acima não chega nele): `$claude = (Get-Process -Id $env:CLAUDE_PID).Path`
+     e depois `& $claude` no lugar de `claude`
+
+   Confirme com `--version` antes de seguir.
+2. **Instalar**, com HTTPS forçado no clone (sem isso, quem tem chave SSH quebrada falha):
+   ```bash
+   CLAUDE_CODE_PLUGIN_PREFER_HTTPS=1 claude plugin install ingles --marketplace magutolou/ingles-kit
+   ```
+   No PowerShell, antes do comando: `$env:CLAUDE_CODE_PLUGIN_PREFER_HTTPS = "1"`.
+   A saída termina em `Successfully installed plugin: ingles@ingles-kit (scope: user)`. Se o
+   Claude Code reclamar de `--marketplace` (versão anterior à 2.1.292), use os dois passos:
+   `claude plugin marketplace add magutolou/ingles-kit` e `claude plugin install ingles@ingles-kit`.
+3. **Conferir** com `claude plugin list`: tem que aparecer `ingles@ingles-kit` com `Status: enabled`.
+4. **Passar a vez:** dizer à pessoa pra abrir uma sessão nova nesta mesma pasta e rodar
+   `/ingles:setup`.
 
 ---
 
@@ -102,7 +120,20 @@ Detalhes em [`plugins/ingles/referencia/ferramentas.md`](plugins/ingles/referenc
 
 ## Atualizar
 
-Pra puxar a versão mais nova do kit, no terminal (PowerShell ou bash), **fora** do Claude Code:
+Pra puxar a versão mais nova do kit, mande pro agente:
+
+```
+Atualiza o plugin ingles-kit seguindo a seção "Para o agente" do README de
+https://github.com/magutolou/ingles-kit
+```
+
+Depois abra uma **sessão nova**: a que está aberta continua com a versão antiga. Seus dados não são
+tocados: eles estão no seu repo, não no plugin.
+
+### Para o agente: atualizar
+
+Com o executável do passo 1 de "Para o agente: instalar" (`claude`, `"$CLAUDE_CODE_EXECPATH"` ou
+`& $claude`):
 
 ```bash
 claude plugin marketplace update ingles-kit
@@ -110,10 +141,9 @@ claude plugin update ingles@ingles-kit
 ```
 
 São os dois: o primeiro baixa o kit novo, o segundo troca o plugin instalado. Só o primeiro não muda
-nada. Depois **feche e abra o Claude Code**. Pra conferir, `claude plugin list` mostra a versão
-instalada, que é o começo do último commit deste repo.
-
-Seus dados não são tocados: eles estão no seu repo, não no plugin.
+nada. Conferir com `claude plugin list`: a versão instalada é o começo do último commit deste repo
+(`git ls-remote https://github.com/magutolou/ingles-kit HEAD`). Depois dizer à pessoa pra abrir uma
+sessão nova.
 
 ---
 
